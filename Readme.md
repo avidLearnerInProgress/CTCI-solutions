@@ -1,0 +1,1 @@
+# Solutions from the book "Cracking the Coding Interview"
