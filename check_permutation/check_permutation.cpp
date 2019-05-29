@@ -63,8 +63,7 @@ bool checkPermutationSort(string x, string y){
 }
 
 bool checkPermutationHash(string x, string y){
-
-    vector<int> hash(26);
+    vector<int> hash(26); //considering only a-z for now hence 26 characters
     hash = {0};
 
     int i, j;
@@ -79,7 +78,6 @@ bool checkPermutationHash(string x, string y){
 }
 
 int main(){
-    
     int t; cin>>t;
     TC(t){
         string x, y; 
