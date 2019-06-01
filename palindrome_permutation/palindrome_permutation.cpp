@@ -60,8 +60,7 @@ int getFrequency(char x){
 
 bool palindromePermutation(string str){
     if(str.length() < 1) return false;
-    int hash[26] = {0};
-    int i, ctoi;
+    int hash[26] = {0}; int i, ctoi;
     
     FOR(i, 0, str.length()){
         ctoi = getFrequency(str[i]);
