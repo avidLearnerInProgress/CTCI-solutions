@@ -65,9 +65,44 @@ string stringCompression(string x){
     return (result.length() < x.length() ? result : x);
 }
 
+int countCompression(string x){
+    if(x.length() < 1) return 0;
+    int i, count_compression = 0;
+    //string result = "";
+    int length_compression = 0;
+    FOR(i, 0, x.length() - 1){
+        count_compression++;
+        if(i+1 >= x.length() || x[i] != x[i+1]){
+            length_compression += 1 + count_compression;
+            count_compression = 0;
+        }
+    }
+    return length_compression;
+}
+
+string lookAheadCompression(string x){
+    if(x.length() < 1) return "";
+    int count_size = countCompression(x);
+    if(count_size < x.length())
+        return x;
+    
+    int count_compression = 0;
+    string result = "";
+    FOR(i, 0, x.length() - 1){
+        count_compression++;
+        if(i+1 >= x.length() || x[i] != x[i+1]){
+            result += x[i];
+            result += to_string(count_compression);
+            count_compression = 0;
+        }
+    }
+    return result;
+}
+
 int main()
 {
     string ip = "aaabbbccdddeefghiiijjkk";
     cout<<stringCompression(ip)<<"\n";
+    cout<<lookAheadCompression(ip)<<"\n";
     return 0;
 }
