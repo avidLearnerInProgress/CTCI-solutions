@@ -11,16 +11,16 @@ def palindromePermutation(mystr):
         return False
     hash_ = [0] * 26
     i, ctoi = 0, 0
-        
+
     for i in range(len(mystr)):
         ctoi = getFrequency(str[i])
         if ctoi != -1:
-            hash[ctoi] += 1
+            hash_[ord(ctoi)] += 1
     found_n = False    
     for i in range(27):
-        if hash[i] % 2 == 1 and found_n:
+        if hash_[i] % 2 == 1 and found_n:
             return False
-        if hash[i] % 2 == 1 and (not found_n):
+        if hash_[i] % 2 == 1 and (not found_n):
             found_n = True
     return found_n
 
