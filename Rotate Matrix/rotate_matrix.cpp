@@ -49,7 +49,6 @@ int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
 #define PERMUTE next_permutation 
 #define TC(t) while (t--) 
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
-
 vector<vector<int> > anti_reverse_elements(vector<vector<int> > to_reverse, int n){
     //vector<vector<int> > my_ip_T_R(n);
     for(int i=0; i<n; i++){
@@ -87,24 +86,18 @@ int main(){
         for(int j=0; j<n; j++)
             my_ip_T[i].push_back(my_ip[j][i]);
     
-    for(int i=0; i<n; i++){
-        for(int j=0; j<n; j++){
-            cout<<my_ip_T[i][j]<<" ";
-        }
-        cout<<"\n";
-    }
     auto reversed = reverse_elements(my_ip_T, n);
     auto antireversed = anti_reverse_elements(my_ip_T, n);
 
     cout<<"##########-----##########\n";
-    cout<<"Input:-"
+    cout<<"Input:-\n";
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
             cout<<my_ip[i][j]<<" ";
         }
         cout<<"\n";
     }
-    cout<<"Clockwise (90)º :-"
+    cout<<"Row-wise -- Clockwise (90)º :-\n";
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
             cout<<reversed[i][j]<<" ";
@@ -112,7 +105,7 @@ int main(){
         cout<<"\n";
     }
 
-    cout<<"AntiClockwise (90)º :-"
+    cout<<"Column-wise -- Clockwise (90)º :-\n";
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
             cout<<antireversed[i][j]<<" ";
