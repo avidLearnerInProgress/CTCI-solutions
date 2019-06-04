@@ -1,7 +1,6 @@
-//https://ide.geeksforgeeks.org/Ll50fYpN5t
+//
 #include <bits/stdc++.h> // Include every standard library 
 using namespace std; 
-
 typedef long long LL; 
 typedef pair<int, int> pii; 
 typedef pair<LL, LL> pll; 
@@ -52,9 +51,8 @@ int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
 void printMatrix(vector<vector<int> > matrix, int n){
     int i, j;
     FOR(i, 0, n){
-        FOR(j, 0, n){
+        FOR(j, 0, n)
             cout<<matrix[i][j]<<" ";
-        }
         cout<<"\n";
     }
 }
@@ -71,13 +69,10 @@ void nullifyCol(vector<vector<int> > &fill, int col){
         fill[i][col] = 0;
 }
 void setZero(vector<vector<int> > &fill, int n){
-    if(fill[0].size() < 0 || fill.size() < 0) return;
+    if(fill[0].size() <= 0 || fill.size() <= 0) return;
     int rsz = fill.size(), csz = fill[0].size();
     vector<int> rowZero(rsz, 0);
     vector<int> colZero(csz, 0);
-    //memset(rowZero, 0, sizeof(rowZero));
-    //memset(colZero, 0, sizeof(colZero));
-    
     int i,j;
     FOR(i, 0, n){
         FOR(j, 0, n){
@@ -97,7 +92,54 @@ void setZero(vector<vector<int> > &fill, int n){
         if(colZero[j])
             nullifyCol(fill, j);
     }
+}
+
+void setZeroSpaceOptimised(vector<vector<int> > &fill, int n){
+    if(fill.size() <= 0 || fill[0].size() <= 0) return;
+    //check for 0th rows and cols and set the bools if 0 is present
+    //check remaining matrix and if any 0 found set i0 or 0j
+    //next nullify all rows and cols for which i0 or 0j is true
+    //recheck the true set in step 1 and nullify the 0th col and row
+    bool row_zero = false, col_zero = false;
+    int i,j,k,l;
+
+    FOR(i, 0, fill[0].size())
+        if(fill[i][0] == 0){
+            col_zero = true;
+            break;
+        }
+
+    FOR(i, 0, fill.size())
+        if(fill[0][i] == 0){
+            row_zero = true;
+            break;
+        }
     
+    FOR(i, 1, fill.size()){
+        FOR(j, 1, fill[0].size()){
+            if(fill[i][j] == 0){
+                fill[i][0] = 0;
+                fill[0][j] = 0;
+            }
+        }
+    }
+
+    FOR(i, 1, fill.size()){
+        if(fill[i][0] == 0)
+            nullifyRow(fill, i);
+    }
+    
+    FOR(j, 1, fill[0].size()){
+        if(fill[0][j] == 0)
+            nullifyCol(fill, j);
+    }
+
+    if(row_zero)
+        nullifyRow(fill, 0);
+    if(col_zero)
+        nullifyCol(fill, 0);
+
+ //   printMatrix(fill, n);
 }
 
 int main()
@@ -113,9 +155,11 @@ int main()
         }
     }
     printMatrix(fill, n);
-    setZero(fill, n);
-    cout<<"Set to Zero:-\n";
+    //setZero(fill, n);
+    //cout<<"Set to Zero:-\n";
+    //printMatrix(fill, n);
+    setZeroSpaceOptimised(fill, n);
+    cout<<"Set to Zero Optimised:-\n";
     printMatrix(fill, n);
-    
     return 0;
 }
