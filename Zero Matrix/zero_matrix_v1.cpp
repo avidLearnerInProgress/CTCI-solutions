@@ -1,4 +1,3 @@
-//https://ide.geeksforgeeks.org/Ll50fYpN5t
 #include <bits/stdc++.h> // Include every standard library 
 using namespace std; 
 
@@ -49,73 +48,43 @@ int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
 #define TC(t) while (t--) 
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
-void printMatrix(vector<vector<int> > matrix, int n){
-    int i, j;
-    FOR(i, 0, n){
-        FOR(j, 0, n){
-            cout<<matrix[i][j]<<" ";
-        }
-        cout<<"\n";
-    }
-}
-
-void nullifyRow(vector<vector<int> > &fill, int row){
-    int i;
-    FOR(i, 0, fill.size())
-        fill[row][i] = 0;
-}
-
-void nullifyCol(vector<vector<int> > &fill, int col){
-    int i;
-    FOR(i, 0, fill[0].size())
-        fill[i][col] = 0;
-}
-void setZero(vector<vector<int> > &fill, int n){
-    if(fill[0].size() < 0 || fill.size() < 0) return;
-    int rsz = fill.size(), csz = fill[0].size();
-    vector<int> rowZero(rsz, 0);
-    vector<int> colZero(csz, 0);
-    //memset(rowZero, 0, sizeof(rowZero));
-    //memset(colZero, 0, sizeof(colZero));
-    
-    int i,j;
-    FOR(i, 0, n){
-        FOR(j, 0, n){
-            if(fill[i][j]==0){
-                rowZero[i] = 1;
-                colZero[j] = 1;
-            }
-        }
-    }
-    
-    FOR(i, 0, fill.size()){
-        if(rowZero[i])
-            nullifyRow(fill, i);
-    }
-    
-    FOR(j, 0, fill[0].size()){
-        if(colZero[j])
-            nullifyCol(fill, j);
-    }
-    
-}
-
 int main()
 {
-    int n, i, j; 
-    cin>>n; //dimension
-    vector<vector<int> > fill(n);
-    int x; 
-    FOR(i, 0, n){
-        FOR(j, 0, n){
-            cin>>x;
-            fill[i].push_back(x);
-        }
-    }
-    printMatrix(fill, n);
-    setZero(fill, n);
-    cout<<"Set to Zero:-\n";
-    printMatrix(fill, n);
-    
-    return 0;
+	int t,m,n,i,j;
+	cin>>t;
+	while(t--){
+	    cin>>m>>n;
+	    int arr[m+10][n+10],rows[m+10],cols[n+10];
+	    for(i=0; i<m; i++){
+	        rows[i]=0;
+	    }
+	    for(i=0; i<n; i++){
+	        cols[i]=0;
+	    }
+	    for(i=0; i<m; i++){
+	        for(j=0; j<n; j++){
+	            cin>>arr[i][j];
+	            if(arr[i][j]==0){
+	                rows[i] = 1;
+	                cols[j] = 1;
+	            }
+	        }
+	    }
+
+	// cout<<endl;
+	    for(i=0; i<m; i++){
+	        for(j=0; j<n; j++){
+	            if((rows[i]==0) || (cols[j]==0)){
+	                arr[i][j]=1;
+	            }
+	        }
+	    }
+	    for(i=0; i<m; i++){
+	        for(j=0; j<n; j++){
+	            cout<<arr[i][j]<<" ";
+	        }
+	    }
+	    cout<<endl;
+	}
+	return 0;
 }
