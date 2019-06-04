@@ -1,4 +1,5 @@
-//https://ide.geeksforgeeks.org/nCoLMrqWtn
+
+//https://ide.geeksforgeeks.org/BvVj4bLVkH
 #include <bits/stdc++.h> // Include every standard library 
 using namespace std; 
 typedef long long LL; 
@@ -49,13 +50,13 @@ int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
 /*
-Approach 1: Take transpose of matrix and then reverse the rows for clockwise 90' rotation.
+Approach 1: Take transpose of cp_my_ip and then reverse the rows for clockwise 90' rotation.
  			Obviously if we reverse the columns we will get anticlockwise 90' rotation.
 Approach 2: As mentioned in the book, rotating invididual elements layer by layer.
 			   I have solved it perform anticlockwise 90' rotation, it can be done similarly for clockwise rotatation.
 */
 /*
-Anticlockwise: Find transpose of matrix(Tm) and then reverse columns of Tm
+Anticlockwise: Find transpose of cp_my_ip(Tm) and then reverse columns of Tm
 Clockwise: Find Tm and then reverse rows of TM 
 */
 
@@ -94,7 +95,8 @@ int main(){
           my_ip[i].push_back(x);
         }
     }
-    
+    auto cp_my_ip = my_ip;
+
     cout<<"Approach 1:-\n";
     
     //clockwise :- transpose + rowwise transformation
@@ -141,7 +143,43 @@ int main(){
         }
         cout<<"\n";
     }
+    cout<<"Approach 2:-\n";   
+    //use layer by layer rotation
+    //swap index by index
+    /*
+        for i in range(0, n):
+            temp = top[i]
+            top[i] = left[i]
+            left[i] = bottom[i]
+            bottom[i] = right[i]
+            right[i] = temp
+    */
 
-    cout<<"Approach 2:-\n";
-    
+    int level, first, last;
+    for (level = 0; level < n / 2; level++) //n/2 --> for 4x4 cp_my_ip, it will have 2 layers
+	{
+        first = level;
+        last = n - first - 1;
+        for (int element = first; element < last; element++){
+            int offset = element - first;
+            int topleft = cp_my_ip[first][element];
+            int topright = cp_my_ip[element][last];
+            int bottomright = cp_my_ip[last][last - offset];
+            int bottomleft = cp_my_ip[last - offset][first];
+            cp_my_ip[first][element] = bottomleft;
+            cp_my_ip[element][last] = topleft;
+            cp_my_ip[last][last - offset] = topright;
+            cp_my_ip[last - offset][first] = bottomright;
+            //shifting the col value to its pos, since its a clockwise rotation so, seven will be at 1 
+        }
+		
+	}
+	//clockwise 90 degrees
+	cout<<"Clockwise 90 degrees\n";
+	for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            cout<<cp_my_ip[i][j]<<" ";
+        }
+        cout<<"\n";
+    }
 }
