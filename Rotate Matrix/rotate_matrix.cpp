@@ -1,8 +1,6 @@
 //https://ide.geeksforgeeks.org/nCoLMrqWtn
-
 #include <bits/stdc++.h> // Include every standard library 
 using namespace std; 
-
 typedef long long LL; 
 typedef pair<int, int> pii; 
 typedef pair<LL, LL> pll; 
@@ -49,31 +47,46 @@ int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
 #define PERMUTE next_permutation 
 #define TC(t) while (t--) 
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
-vector<vector<int> > rreverse_elements(vector<vector<int> > to_reverse, int n){
-    //vector<vector<int> > my_ip_T_R(n);
+
+/*
+Approach 1: Take transpose of matrix and then reverse the rows for clockwise 90' rotation.
+ 			Obviously if we reverse the columns we will get anticlockwise 90' rotation.
+Approach 2: As mentioned in the book, rotating invididual elements layer by layer.
+			   I have solved it perform anticlockwise 90' rotation, it can be done similarly for clockwise rotatation.
+*/
+/*
+Anticlockwise: Find transpose of matrix(Tm) and then reverse columns of Tm
+Clockwise: Find Tm and then reverse rows of TM 
+*/
+
+void transpose(vector<vector<int> > &a, int n){
     for(int i=0; i<n; i++){
-        for(int j=0; i<n; i++){
-            swap(to_reverse[i][j], to_reverse[n-i-1][j]);
-        }
+        for(int j=i+1; j<n; j++)
+            if(i!=j)
+                swap(a[i][j], a[j][i]);
     }
-    return to_reverse;
 }
 
-vector<vector<int> > creverse_elements(vector<vector<int> > to_reverse, int n){
-    //vector<vector<int> > my_ip_T_R(n);
+void rreverse_elements(vector<vector<int> > &to_reverse, int n){
     for(int i=0; i<n; i++){
         for(int j=0; i<n; i++){
             swap(to_reverse[i][j], to_reverse[i][n-j-1]);
         }
     }
-    return to_reverse;
+}
+
+void creverse_elements(vector<vector<int> > &to_reverse, int n){
+    for(int i=0; i<n; i++){
+        for(int j=0; i<n; i++){
+            swap(to_reverse[j][i], to_reverse[n-j-1][i]);
+        }
+    }
 }
 
 int main(){
     int i, j, n;
     cin>>n;
     vector<vector<int> > my_ip(n);
-    vector<vector<int> > my_ip_T(n);
     int x;
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
@@ -82,34 +95,53 @@ int main(){
         }
     }
     
-    for(int i=0; i<n; i++)
-        for(int j=0; j<n; j++)
-            my_ip_T[i].push_back(my_ip[j][i]);
+    cout<<"Approach 1:-\n";
     
-    auto rreversed = rreverse_elements(my_ip_T, n);
-    auto creversed = creverse_elements(my_ip_T, n);
+    //clockwise :- transpose + rowwise transformation
+    /*
+    1 2 3      1 4 7      7 4 1 
+    4 5 6  --> 2 5 8  --> 8 5 2 
+    7 8 9      3 6 9      9 6 3
+    */
+    
+    
+    //anticlockwise :- transpose + rowwise + columnwise + rowwise transformation
+    /*
+    1 2 3      1 4 7      7 4 1     9 6 3     3 6 9 
+    4 5 6  --> 2 5 8  --> 8 5 2 --> 8 5 2 --> 2 5 8 
+    7 8 9      3 6 9      9 6 3     7 4 1     1 4 7
+    */
 
-    cout<<"##########-----##########\n";
-    cout<<"Input:-\n";
+    transpose(my_ip, n);
+    cout<<"Transposed:-\n";
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
             cout<<my_ip[i][j]<<" ";
         }
         cout<<"\n";
     }
-    cout<<"Row-wise -- Clockwise (90)º :-\n";
+    
+    //rowwise
+    rreverse_elements(my_ip, n);
+    cout<<"Clockwise 90 degrees :-\n";
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
-            cout<<rreversed[i][j]<<" ";
+            cout<<my_ip[i][j]<<" ";
+        }
+        cout<<"\n";
+    }
+    
+    //columnwise
+    creverse_elements(my_ip, n);
+    rreverse_elements(my_ip, n);
+    cout<<"Anticlockwise 90 degrees :-\n";
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            cout<<my_ip[i][j]<<" ";
         }
         cout<<"\n";
     }
 
-    cout<<"Column-wise -- Clockwise (90)º :-\n";
-    for(int i=0; i<n; i++){
-        for(int j=0; j<n; j++){
-            cout<<creversed[i][j]<<" ";
-        }
-        cout<<"\n";
-    }
+    cout<<"Approach 2:-\n";
+    
 }
