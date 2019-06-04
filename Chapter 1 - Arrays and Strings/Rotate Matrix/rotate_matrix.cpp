@@ -1,4 +1,3 @@
-
 //https://ide.geeksforgeeks.org/BvVj4bLVkH
 #include <bits/stdc++.h> // Include every standard library 
 using namespace std; 
