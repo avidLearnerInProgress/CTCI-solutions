@@ -14,7 +14,7 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 * String Rotation - *_Check if string s2 is rotation of string s1 using isSubstring()_* **_&rarr;_** **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/String%20Rotation/string_rotation.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Zero%20Matrix/string_rotation.py)_**
 
 
-[Trying to link ](/tree/master/Chapter%201%20-%20Arrays%20and%20Strings#check-permutation)
+[Trying to link ](/Chapter%201%20-%20Arrays%20and%20Strings#check-permutation)
 
 ## Todo's:
 - [ ] Readme per chapter explaining solutions  
