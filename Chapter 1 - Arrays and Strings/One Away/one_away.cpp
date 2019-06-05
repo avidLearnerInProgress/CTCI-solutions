@@ -97,14 +97,21 @@ bool oneAway(string s1, string s2){
     bool found = false; //calculate difference - one away
     while(i < s1.length() && j < s2.length()){
         if(s1[i] != s2[j]){
-            if(found) return false; // testecase --> "tail" "pale" will break this loop
+            if(found) return false; // testcase --> "tail" "pale" will break this loop
             found = true;
+
+            //replace operation
             if(s1.length() == s2.length())j++; //move shorter pointer only when both strings are of same length. 
-            //If they are moved when they are of unqeqal lengths; it will be big problem
+            //If they are moved when they are of unequal lengths; it will be big problem
+            /*
+            Example: bale and pal
+            b != p:- and len(bale) != len(pal) So increment only i here.
+            i.e. increment only longer pointer to bring the [b + len(ale)] and len(pal) in sync for next iteration
+            */
         }
         else
             j++; //move shorter pointer ahead when both chars in s1 and s3 are ruqal
-        i++; //
+        i++; //increment longer pointer always while scanning.
     }
     return true;
 }
