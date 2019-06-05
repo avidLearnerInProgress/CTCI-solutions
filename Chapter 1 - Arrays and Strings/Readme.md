@@ -76,4 +76,44 @@
 
 	* **Approach** :-
 		1. Use hashtable, count occurences of each character within string. Now check for number of odd count characters. If its > 1, then return false.
+
 		2. Instead of checking number of odd count characters in the end, check for number of odd counts while scanning string L-R itself.
+   
+### One Away
+
+* **Problem Statement** **&rarr;** There are 3 types of edit taht can be performed. Insert, remove or replace a character. Given two strings, write a function to check if both of them are 1/0 edits away.
+
+	* **Key points** :-
+		1. Replacement in this problem explicitly means that two strings differ only in one place.
+   
+		2. Removal and Insertion also imply that one string is smaller than other
+
+		3. If two strings differ in length > 1, they aren't one/zero edits away.
+
+	* **Approach** :-
+		1. Use hashtable, count occurences of each character within *the longer* string. Now scan through smaller string and decrement the count of occurences for characters encountered in hashtable. If final difference in count is <= 1, both the strings are one/zero edit away.
+   
+		2. Find longer string. Take two pointers (i and j) each for long and short string. If s1[i] != s2[j] and len(s1) == len(s2) increment shorter pointer. Increment longer pointer always while scanning. *Snippet:-*
+            ```
+            int i = 0, j = 0;
+                bool found = false; //calculate difference - one away
+                while(i < s1.length() && j < s2.length()){
+                    if(s1[i] != s2[j]){
+                        if(found) return false; // testcase --> "tail" "pale" will break this loop
+                        found = true;
+                        //replace operation
+                        if(s1.length() == s2.length())j++; //move shorter pointer only when both strings are of same length. 
+                        //If they are moved when they are of unequal lengths; it will be big problem
+                        /*
+                        Example: bale and pal
+                        b != p:- and len(bale) != len(pal) So increment only i here.
+                        i.e. increment only longer pointer to bring the [b + len(ale)] and len(pal) in sync for next iteration
+                        */
+                    }
+                    else
+                        j++; //move shorter pointer ahead when both chars in s1 and s3 are ruqal
+                    i++; //increment longer pointer always while scanning.
+                }
+                return true;
+            }
+            ```
