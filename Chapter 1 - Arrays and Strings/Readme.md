@@ -125,9 +125,9 @@
 * **Problem Statement** **&rarr;** Implement a method to perform basic string compression using the counts of repeated characters. If compressed string doesn't become smaller than the original string, your method should return original string. Assume string has only uppercase and lowercase letters. (a-zA-Z)
 
 	* **Key points** :-
-		1. Clarify how the characters are placed in string. Take an example in this case. Are they sorted/un-sorted/spread randomly within the string
+		1. Clarify how the characters are placed in string. Take an example in this case. Are they sorted/un-sorted/spread randomly within the string.
    
-		2. When consecutive characters are placed next to each other, we can use look ahead comparison of characters at position i and i+1 within string
+		2. When consecutive characters are placed next to each other, we can use look ahead comparison of characters at position i and i+1 within string.
 
 	* **Approach** :-
         1. Use hashing. Each occurence of character can be hashed and then the count can be appended in the string from backwards Similar to technique that was used in _problem URLify_. This takes O(n) space.
@@ -143,3 +143,33 @@
                     }
                 }
             ```
+
+### Rotate Matrix
+
+* **Problem Statement** **&rarr;** Given an image represented by matrix NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate image by 90 degrees. Can you do this inplace?
+
+	* **Key points** :-
+		1. Look for patterns in the given sample testcase. Matrix rotation highly involves dealing with transpose of matrix.
+   
+		2. Look at the 4 corners of input matrix and output matrix for the sample testcase.
+
+	* **Approach** :-
+        1. Transpose matrix and then perform transformations(row-wise/column-wise) to bring the input matrix in desired output state.  _My workaround_:-
+        ```
+        //clockwise :- transpose + rowwise transformation
+        /*
+        1 2 3      1 4 7      7 4 1 
+        4 5 6  --> 2 5 8  --> 8 5 2 
+        7 8 9      3 6 9      9 6 3
+        */
+
+        //anticlockwise :- transpose + rowwise + columnwise + rowwise transformation
+        /*
+        1 2 3      1 4 7      7 4 1     9 6 3     3 6 9 
+        4 5 6  --> 2 5 8  --> 8 5 2 --> 8 5 2 --> 2 5 8 
+        7 8 9      3 6 9      9 6 3     7 4 1     1 4 7
+        */
+        ```
+        2. Perform circular rotation on each layer, moving corner edges. Top to right, right to bottom, bottom to left and left to top. (Or vice versa) 
+
+        
