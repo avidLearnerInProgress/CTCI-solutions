@@ -186,3 +186,15 @@
         1. Use 2 arrays to keep track of all rows with 0's and all columns with 0's. Nullify columns and rows based on these arrays. This approach consumes O(N) space,
         
         2. Check if first row and first column have 0's. Iterate through matrix and for each 0 encountered, set its corresponding first row and first column ([i][0] and [0][j]) to 0. Nullify rows and columns based on values set in first row and first column. Nullify first row and first column, if necessary.   
+
+### String Rotation
+
+* **Problem Statement** **&rarr;** Assume you have method isSubString which checks if one word is substring of another. Given two strings, write code to check if s2 is rotation of s1 with just oneall to isSubString.
+  
+	* **Key points** :-
+		1. Rotation of string always have a point within stirng from where the rotation begins. Example:- "water" when rotated as "terwa" has "t" as the rotation point.
+   
+		2. Multiple contactenation of one string produces all forms of subsets of rotations that are expected.
+
+	* **Approach** :-
+        1. Concatenate original string(s1) with itself. Now check if s2 is substring of s1 by calling isSubString method
