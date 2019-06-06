@@ -16,7 +16,8 @@ This repository contains C++ and Python solutions to the problems in the sixth e
   * **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/One%20Away/one_away.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/One%20Away/one_away.py)_**
 * String Compression - *_Perform string compression using counts of repeated characters_* **_&rarr;_** **[Overview](/Chapter%201%20-%20Arrays%20and%20Strings#string-compression)**
   * **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/String%20Compression/string_compression.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/String%20Compression/string_compression.py)_**
-* Rotate Matrix - *_Rotate given nxn image by 90 degrees inplace_* **_&rarr;_** **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/Rotate%20Matrix/rotate_matrix.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Rotate%20Matrix/rotate_matrix.py)_**
+* Rotate Matrix - *_Rotate given nxn image by 90 degrees inplace_* **_&rarr;_** **[Overview](/Chapter%201%20-%20Arrays%20and%20Strings#rotate-matrix)**
+  * **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/Rotate%20Matrix/rotate_matrix.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Rotate%20Matrix/rotate_matrix.py)_**
 * Zero Matrix - *_Replace other elements in rows and columns if element is 0_* **_&rarr;_** **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/Zero%20Matrix/zero_matrix.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Zero%20Matrix/zero_matrix.py)_**
 * String Rotation - *_Check if string s2 is rotation of string s1 using isSubstring()_* **_&rarr;_** **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/String%20Rotation/string_rotation.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Zero%20Matrix/string_rotation.py)_**
 
