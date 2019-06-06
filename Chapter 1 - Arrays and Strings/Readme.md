@@ -48,7 +48,8 @@
 		3. For string manipulation problems(having extra spaces), editing the string backwards from end to start is preferred.
 
 	* **Approach** :-
-		1. Get space count, triple the count to suffice space for additional characters. Scan from right to left; if you encounter space, insert 3 characters, else insert normal character. _Snippet_:-
+		1. Get space count, triple the count to suffice space for additional characters. Scan from right to left; if you encounter space, insert 3 characters, else insert normal character.  
+        _Snippet_:-
             ```
                 int extendedLen = len + 2 * space_count;
                 i = extendedLen - 1;
@@ -65,7 +66,7 @@
 
 ### Palindrome Permutation
 
-* **Problem Statement** **&rarr;** Given a string, write a function to check if a string is  a permutation of palindrome.
+* **Problem Statement** **&rarr;** Given a string, write a function to check if a string is a permutation of palindrome.
 
 	* **Key points** :-
 		1. Palindrome is a string that is same when read backwards and forwards. The aim is to find a permutation/variant of string that is a palindrome.
@@ -93,27 +94,52 @@
 	* **Approach** :-
 		1. Use hashtable, count occurences of each character within *the longer* string. Now scan through smaller string and decrement the count of occurences for characters encountered in hashtable. If final difference in count is <= 1, both the strings are one/zero edit away.
    
-		2. Find longer string. Take two pointers (i and j) each for long and short string. If s1[i] != s2[j] and len(s1) == len(s2) increment shorter pointer. Increment longer pointer always while scanning. *Snippet:-*
+		2. Find longer string. Take two pointers (i and j) each for long and short string. If s1[i] != s2[j] and len(s1) == len(s2) increment shorter pointer. Increment longer pointer always while scanning.  
+        _Snippet_:-
             ```
-            int i = 0, j = 0;
-                bool found = false; //calculate difference - one away
-                while(i < s1.length() && j < s2.length()){
-                    if(s1[i] != s2[j]){
-                        if(found) return false; // testcase --> "tail" "pale" will break this loop
-                        found = true;
-                        //replace operation
-                        if(s1.length() == s2.length())j++; //move shorter pointer only when both strings are of same length. 
-                        //If they are moved when they are of unequal lengths; it will be big problem
-                        /*
-                        Example: bale and pal
-                        b != p:- and len(bale) != len(pal) So increment only i here.
-                        i.e. increment only longer pointer to bring the [b + len(ale)] and len(pal) in sync for next iteration
-                        */
+                int i = 0, j = 0;
+                    bool found = false; //calculate difference - one away
+                    while(i < s1.length() && j < s2.length()){
+                        if(s1[i] != s2[j]){
+                            if(found) return false; // testcase --> "tail" "pale" will break this loop
+                            found = true;
+                            //replace operation
+                            if(s1.length() == s2.length())j++; //move shorter pointer only when both strings are of same length. 
+                            //If they are moved when they are of unequal lengths; it will be big problem
+                            /*
+                            Example: bale and pal
+                            b != p:- and len(bale) != len(pal) So increment only i here.
+                            i.e. increment only longer pointer to bring the [b + len(ale)] and len(pal) in sync for next iteration
+                            */
+                        }
+                        else
+                            j++; //move shorter pointer ahead when both chars in s1 and s3 are ruqal
+                        i++; //increment longer pointer always while scanning.
                     }
-                    else
-                        j++; //move shorter pointer ahead when both chars in s1 and s3 are ruqal
-                    i++; //increment longer pointer always while scanning.
+                    return true;
                 }
-                return true;
-            }
+            ```
+
+### String Compression
+
+* **Problem Statement** **&rarr;** Implement a method to perform basic string compression using the counts of repeated characters. If compressed string doesn't become smaller than the original string, your method should return original string. Assume string has only uppercase and lowercase letters. (a-zA-Z)
+
+	* **Key points** :-
+		1. Clarify how the characters are placed in string. Take an example in this case. Are they sorted/un-sorted/spread randomly within the string
+   
+		2. When consecutive characters are placed next to each other, we can use look ahead comparison of characters at position i and i+1 within string
+
+	* **Approach** :-
+        1. Use hashing. Each occurence of character can be hashed and then the count can be appended in the string from backwards Similar to technique that was used in _problem URLify_. This takes O(n) space.
+   
+        2. Lookahead comparison: When extra space is not allowed, use a global counter to count occurences of same character. Since same characters are placed next to each other(assumption), then this counter can be reset as and when charAt(i) != charAt(i+1).  
+        _Snippet_:-
+            ```
+                FOR(i, 0, x.length() - 1){
+                    count_compression++;
+                    if(i+1 >= x.length() || x[i] != x[i+1]){
+                        length_compression += 1 + count_compression;
+                        count_compression = 0;
+                    }
+                }
             ```
