@@ -173,3 +173,16 @@
         2. Perform circular rotation on each layer, moving corner edges. Top to right, right to bottom, bottom to left and left to top. (Or vice versa) 
 
         
+### Zero Matrix
+
+* **Problem Statement** **&rarr;** Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to 0.
+
+	* **Key points** :-
+		1. Iterating through matrix and changing all the values for corresponding rows and columns for each 0 encountered is a wrong approach. (This will set the entire matrix filled with 0's)
+   
+		2. There is no point in maintaining deep history for each exact location of 0's. If a row contains zero, that's the only necessary condition to set all the elements within same row as 0's.
+
+	* **Approach** :-
+        1. Use 2 arrays to keep track of all rows with 0's and all columns with 0's. Nullify columns and rows based on these arrays. This approach consumes O(N) space,
+        
+        2. Check if first row and first column have 0's. Iterate through matrix and for each 0 encountered, set its corresponding first row and first column ([i][0] and [0][j]) to 0. Nullify rows and columns based on values set in first row and first column. Nullify first row and first column, if necessary.   
