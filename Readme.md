@@ -19,6 +19,10 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 * Zero Matrix - *_Replace other elements in rows and columns if element is 0_* **_&rarr;_** **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/Zero%20Matrix/zero_matrix.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Zero%20Matrix/zero_matrix.py)_**
 * String Rotation - *_Check if string s2 is rotation of string s1 using isSubstring()_* **_&rarr;_** **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/String%20Rotation/string_rotation.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Zero%20Matrix/string_rotation.py)_**
 
+### Chapter 2:
+* Remove Dups - *_Remove duplicates from unsorted linked list_* **_&rarr;_** **_[C++](/Remove%20Dups/remove_dups.cpp)_** **|** **_[Python](/Remove%20Dups/remove_dups.py)_**
+* Return Kth To Last - *_Find kth to last element of singly linked list* **_&rarr;_** **_[C++](/Return%20Kth%20To%20Last/return_kth_to_last.cpp)_** **|** **_[Python](/Return%20Kth%20To%20Last/return_kth_to_last.py)_**
+
 
 ## Todo's:
 - [ ] Readme per chapter explaining solutions  
