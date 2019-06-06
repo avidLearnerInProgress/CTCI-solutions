@@ -2,7 +2,7 @@
 
 This repository contains C++ and Python solutions to the problems in the sixth edition of [Cracking the Coding Interview](http://www.crackingthecodinginterview.com/) by [Gayle Lackmann McDowell](http://www.gayle.com/).
 
-### Chapter 1:
+### Chapter 1: [Full chapter Summary](/Chapter%201%20-%20Arrays%20and%20Strings/Readme.md)
 
 * Is Unique - _Determine if a string has all unique characters_ **_&rarr;_**  **[Overview](/Chapter%201%20-%20Arrays%20and%20Strings#is-unique)** 
   * **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/Is%20Unique/is_unique.cpp)_**  **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Is%20Unique/is_unique.cpp)_**
