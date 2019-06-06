@@ -20,7 +20,8 @@ This repository contains C++ and Python solutions to the problems in the sixth e
   * **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/Rotate%20Matrix/rotate_matrix.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Rotate%20Matrix/rotate_matrix.py)_**
 * Zero Matrix - *_Replace other elements in rows and columns if element is 0_* **_&rarr;_** **[Overview](/Chapter%201%20-%20Arrays%20and%20Strings#zero-matrix)**
   * **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/Zero%20Matrix/zero_matrix.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Zero%20Matrix/zero_matrix.py)_**
-* String Rotation - *_Check if string s2 is rotation of string s1 using isSubstring()_* **_&rarr;_** **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/String%20Rotation/string_rotation.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Zero%20Matrix/string_rotation.py)_**
+* String Rotation - *_Check if string s2 is rotation of string s1 using isSubstring()_* **_&rarr;_** **[Overview](/Chapter%201%20-%20Arrays%20and%20Strings#string-rotation)**
+  * **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/String%20Rotation/string_rotation.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Zero%20Matrix/string_rotation.py)_**
 
 ### Chapter 2:
 * Remove Dups - *_Remove duplicates from unsorted linked list_* **_&rarr;_** **_[C++](/Remove%20Dups/remove_dups.cpp)_** **|** **_[Python](/Remove%20Dups/remove_dups.py)_**
