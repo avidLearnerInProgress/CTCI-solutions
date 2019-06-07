@@ -17,10 +17,26 @@ class LinkedList:
         while(temp):
             print(temp.data, end = ' ')
             temp = temp.next
-    #O(n^2)
+    
+    #Stable version
     def partition_around_x(self, x):
-        #partition value 1.) is present in list 2.) not present in list
-        #If 1.) it need not be the middle element   
+        curr = self.head
+        dummy1 = dummy2 = Node(0)
+        x1, x2 = dummy1, dummy2
+        dummy1.next = curr
+
+        while(curr):
+            if(curr.data < x):
+                x1.next = curr
+                x1 = x1.next 
+            else:
+                x2.next = curr
+                x2 = x2.next
+            curr = curr.next
+        x2.next = None
+        x1.next = dummy2.next
+        return dummy1.next
+
         
 if __name__ == "__main__":
     ll = LinkedList()
@@ -29,8 +45,5 @@ if __name__ == "__main__":
         ll.push(i)
     ll.printLL()
     print()
-    ll.remove_duplicates_simple()
-    ll.printLL()
-    print()
-    ll.remove_duplicates_hashed()
+    temp = ll.partition_around_x(5)
     ll.printLL()
