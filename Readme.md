@@ -27,7 +27,7 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 * Remove Dups - *_Remove duplicates from unsorted linked list_* **_&rarr;_** **_[C++](/Remove%20Dups/remove_dups.cpp)_** **|** **_[Python](/Remove%20Dups/remove_dups.py)_**
 * Return Kth To Last - *_Find kth to last element of singly linked list_* **_&rarr;_** **_[C++](/Return%20Kth%20To%20Last/return_kth_to_last.cpp)_** **|** **_[Python](/Return%20Kth%20To%20Last/return_kth_to_last.py)_**
 * Delete middle node - *_Delete a node in middle of singly linked list_* **_&rarr;_** **_[C++](/Delete%20Middle%20node/delete_middle_node.cpp)_** **|** **_[Python](/Delete%20Middle%20node%20/delete_middle_node.py)_**
-
+* Partition - *_Partition singly linked list around x_* **_&rarr;_** **_[C++](/Partition/partition.cpp)_** **|** **_[Python](/Partition/partition.py)_**
 
 ## Todo's:
 - [ ] Readme per chapter explaining solutions  
