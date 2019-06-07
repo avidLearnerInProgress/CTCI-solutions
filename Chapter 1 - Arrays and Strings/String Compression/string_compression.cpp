@@ -1,7 +1,6 @@
 //https://ide.geeksforgeeks.org/99cYaz4W3i
 #include <bits/stdc++.h> // Include every standard library 
 using namespace std; 
-
 typedef long long LL; 
 typedef pair<int, int> pii; 
 typedef pair<LL, LL> pll; 
