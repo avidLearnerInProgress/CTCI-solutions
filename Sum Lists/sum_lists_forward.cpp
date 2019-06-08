@@ -1,4 +1,4 @@
-//https://ide.geeksforgeeks.org/80ax0k2Bg9
+//https://ide.geeksforgeeks.org/elbhFhdSAG
 #include <bits/stdc++.h> // Include every standard library 
 using namespace std; 
 typedef long long LL; 
@@ -68,13 +68,14 @@ void printLL(Node *head){
     }
 }
 
-void countLL(Node *head){
-    if(head == NULL)return;
+int countLL(Node *head){
+    if(head == NULL)return 0;
     int node_count = 0;
     while(head != NULL){
         node_count++;
         head = head->next;
     }
+    return node_count;
 }
 
 Node *insertNode(int data, Node *head){
@@ -82,7 +83,7 @@ Node *insertNode(int data, Node *head){
     if(head == NULL)
         head = newNode;
     else{
-        head->next = newNode;
+        newNode->next = head;
         head = newNode;
     }
     return head;
@@ -104,37 +105,91 @@ Node *insertNodeEnd(int data, Node *head)
 	return head;
 }
 
-//Least significant digit(Unit's place) --> on left
-//Most significant digit(Hundred's place) --> on right
-Node *sum_lists(Node *head1, Node *head2){
-    if(head1 == NULL || head2 == NULL) return NULL;    
-    Node *temp, *prev = NULL;
-    Node *result = NULL;
-    int sum, carry = 0;
+/* 
+Here we perform LL addition as the numbers appear in the input
+The size of both the LL's matter here because the hundredth's place is on left followed by unit's to the right
 
-    while(head1 != NULL || head2 != NULL){
-        sum = carry + (head1 ? head1->data:0) + (head2 ? head2->data:0);
-        
-        if(sum >= 10)
-            carry = 1;
-        else
-            carry = 0;
-        sum %= 10;
-        
-        temp = createNode(sum);
+3 2 1 -A
+8 9 6 -B
 
-        if(result == NULL)
-            result = temp;
-        else
-            prev->next = temp;
-        prev = temp;
+4 5 6 -C
+8 9   -D
 
-        if(head1) head1 = head1->next;
-        if(head2) head2 = head2->next;
-    }
-    if(carry > 0)
-        temp->next = createNode(carry);
+A and B has no issues. C and D will have a problem as 8 gets aligned to hundredth's place.
+However its actual place value is tens place
+*/
+
+Node *addition_same_sz(Node *head1, Node* head2, int *carry){
+    if(head1 == NULL || head2 == NULL)return NULL;
+    int sum;
+    Node *result = new Node();
+    result->next = addition_same_sz(head1->next, head2->next, carry);
+    sum = head1->data + head2->data + *carry;
+    *carry = sum/10;
+    sum = sum % 10;
+    result->data = sum;
     return result;
+}
+
+void swapHeads(Node **a, Node **b){
+    Node *t = *a;
+    *a = *b;
+    *b = t;
+}
+
+void push(struct Node** head_ref, int new_data) 
+{ 
+    Node *new_node = new Node();
+    new_node->data = new_data; 
+    new_node->next = (*head_ref); 
+    (*head_ref) = new_node; 
+} 
+
+void add_carry_to_remaining(Node *head1, Node *curr, int *carry, Node **result){
+    int sum;
+    if(head1 != curr){
+        add_carry_to_remaining(head1->next, curr, carry, result);
+        sum = head1->data + *carry;
+        *carry = sum/10;
+        sum %= 10;
+    }
+    push(result, sum);
+}
+
+void addition_by_lists_forward(Node *head1, Node *head2, Node **result){
+    if(head1 == NULL){
+        *result = head2;
+        return;
+    }
+    if(head2 == NULL)
+    {
+        *result = head1;
+        return;
+    }
+    Node *curr;
+    int length1 = countLL(head1);
+    int length2 = countLL(head2);
+    int carry = 0;
+
+    if(length1 == length2){
+        *result = addition_same_sz(head1, head2, &carry);
+    }
+
+    else{
+        int diff = abs(length1 - length2);
+        if(length1 < length2){
+            swapHeads(&head1, &head2);
+        }
+        curr = head1;
+        while(diff--)
+            curr = curr->next;
+        
+        *result = addition_same_sz(curr, head2, &carry);
+        add_carry_to_remaining(head1, curr, &carry, result);
+    }
+
+    if(carry)
+        push(result, carry);
 }
 
 int main(){
@@ -145,14 +200,12 @@ int main(){
         cin>>data;
         head1 = insertNodeEnd(data, head1);
     }
-    //printLL(head1);
     
     FOR(i, 0, n){
         cin>>data;
         head2 = insertNodeEnd(data, head2);
     }
-    //printLL(head2);   
-    cout<<"\n";
-    Node *head = sum_lists(head1, head2);
-    printLL(head);
+    Node *result = NULL;
+    addition_by_lists_forward(head1, head2, &result);
+    printLL(result);
 }
