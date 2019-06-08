@@ -1,4 +1,4 @@
-//https://ide.geeksforgeeks.org/80ax0k2Bg9
+//https://ide.geeksforgeeks.org/9tF9U5WhpC
 #include <bits/stdc++.h> // Include every standard library 
 using namespace std; 
 typedef long long LL; 
@@ -114,6 +114,20 @@ Now even if the LL's are of different size it doesnt matter here.
 Because we are dealing with units to hundred's place from L-R
 */
 
+Node *addrecursive(Node *head1, Node *head2, int carry){
+    if(head1 == NULL && head2 == NULL && carry == 0) return NULL;
+    int sum = carry;
+    if(head1)
+    sum += head1->data;
+    if(head2)
+    sum += head2->data;
+    //carry = sum > 9 ? 1 : 0;
+    //sum = sum % 10;
+    Node *result = createNode(sum % 10);
+    result->next = addrecursive(head1 ? head1->next : NULL, head2 ? head2->next : NULL, carry);
+    return result;
+} 
+
 Node *addition_by_lists(Node *head1, Node *head2){
     if(head1 == NULL || head2 == NULL) return NULL;    
     Node *temp, *prev = NULL;
@@ -161,6 +175,11 @@ int main(){
     }
     //printLL(head2);   
     cout<<"\n";
-    Node *head = addition_by_lists(head1, head2);
-    printLL(head);
+    //Node *head = addition_by_lists(head1, head2);
+    //printLL(head);
+    
+    //printLL(head2);   
+    cout<<"\n";
+    Node *head4 = addrecursive(head1, head2, 0);
+    printLL(head4);
 }
