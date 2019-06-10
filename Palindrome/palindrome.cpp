@@ -1,3 +1,4 @@
+//https://ide.geeksforgeeks.org/QF136EYlfH
 #include <bits/stdc++.h> // Include every standard library 
 using namespace std; 
 typedef long long LL; 
