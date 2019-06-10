@@ -105,8 +105,7 @@ Node *insertNodeEnd(int data, Node *head)
 }
 
 //Stack based extra space
-bool isSLLPalindrome1(Node *head){
-    
+bool isSLLPalindrome1(Node *head){    
     if(head == NULL) return false;
     Node *walker = head, *runner = head;
     stack<int> st;
@@ -116,11 +115,13 @@ bool isSLLPalindrome1(Node *head){
         walker = walker->next;
         runner = runner->next->next;
     }
-    if(runner)
-        runner = runner->next;
+    if(runner!=NULL)
+        walker = walker->next;
     
     while(walker != NULL){
         int top = (int)st.top();
+        cout<<top<<"\n";
+        st.pop();
         if(top != walker->data)
             return false;
         walker = walker->next;
@@ -128,6 +129,39 @@ bool isSLLPalindrome1(Node *head){
     return true;
 }
 
+
+Node *reverseLL(Node *head){
+    Node *current = head, *next = NULL, *prev = NULL;
+
+    while(current != NULL){
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = current->next;
+    }
+    head = prev;
+    return head;
+}
+
+bool isEqual(Node *head, Node *rev){
+    if(head == NULL || rev == NULL) return false;
+
+    while(head != NULL && rev != NULL){
+        if(head->data != rev->data)return false;
+        head = head->next;
+        rev = rev->next;
+    }  
+    return head == NULL && rev == NULL;
+}
+
+//reverse SLL
+bool isSLLPalindrome2(Node *head){
+    if(head == NULL) return false;
+    Node *revhead = reverseLL(head);
+    bool res = isEqual(head, revhead);
+    if(res)cout<<"1\n";
+    else cout<<"0\n";
+}
 
 int main(){
     Node *head = NULL;
@@ -139,4 +173,6 @@ int main(){
     printLL(head);
     cout<<"\n";
     cout<<isSLLPalindrome1(head);
+    cout<<"\n";
+    isSLLPalindrome2(head);
 }
