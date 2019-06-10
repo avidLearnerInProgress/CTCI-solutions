@@ -28,7 +28,7 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 * Return Kth To Last - *_Find kth to last element of singly linked list_* **_&rarr;_** **_[C++](/Return%20Kth%20To%20Last/return_kth_to_last.cpp)_** **|** **_[Python](/Return%20Kth%20To%20Last/return_kth_to_last.py)_**
 * Delete middle node - *_Delete a node in middle of singly linked list_* **_&rarr;_** **_[C++](/Delete%20Middle%20node/delete_middle_node.cpp)_** **|** **_[Python](/Delete%20Middle%20node%20/delete_middle_node.py)_**
 * Partition - *_Partition singly linked list around x_* **_&rarr;_** **_[C++](/Partition/partition.cpp)_** **|** **_[Python](/Partition/partition.py)_**
-* Palindrome - *_Check if SLL is palindrome_* **_&rarr;_** **_[C++](/Palindrome/palindrome.cpp)_** **|** **_[Python](/Palindrome/palindrome.py)_**
+* Intersection - *_Given 2 SLL, check if they intersect_* **_&rarr;_** **_[C++](/Intersection/Intersection.cpp)_** **|** **_[Python](/Intersection/Intersection.py)_**
 
 ## Todo's:
 - [ ] Readme per chapter explaining solutions  
