@@ -1,5 +1,4 @@
-//https://ide.geeksforgeeks.org/1JWQUENydA
-//
+//https://ide.geeksforgeeks.org/xdxRbrBUi7
 #include <bits/stdc++.h> // Include every standard library 
 using namespace std; 
 typedef long long LL; 
@@ -106,26 +105,23 @@ Node *insertNodeEnd(int data, Node *head)
 	return head;
 }
 
-
-bool isLoop(Node *head){
+Node *isLoop(Node *head){
     if(head == NULL) return NULL;
     Node *runner = head, *walker = head;
 
     while(runner != NULL and runner->next != NULL){
         walker = walker->next;
         runner = runner->next->next;
-        if(runner == walker) return true;
+        if(runner == walker) break;
     }
-    return false;
-    /*
+    
     if(runner == NULL || runner->next == NULL) return NULL;
     walker = head;
-    
     while(walker != runner){
         walker = walker->next;
         runner = runner->next;
     }
-    return runner;*/
+    return runner; //returns start of loop in linked list
 }
 
 int main(){
@@ -135,6 +131,9 @@ int main(){
     list1->next->next->next = createNode(12);
     list1->next->next->next->next = createNode(15);
     list1->next->next->next->next->next = list1->next->next;
-    if(isLoop(list1)) cout<<"Detected Loop\n";
-    else cout<<"No Loop\n";
+    Node *start = isLoop(list1);
+    if(start == NULL)
+        cout<<"No Loop\n";
+    else
+        cout<<"Detected Loop at node:-"<<start->data<<"\n";
 }
