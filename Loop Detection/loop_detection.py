@@ -32,15 +32,23 @@ def isLoop(head):
     while slow and fast and fast.next:
         slow = slow.next 
         fast = fast.next.next 
-        if slow == fast: return True 
-    return False  
+        if slow == fast: break
+    
+    if fast == None: return None
+    else:
+        slow = head
+        while slow != fast:
+            slow = slow.next
+            fast = fast.next
+        return fast
     
 if __name__ == "__main__":
     node = Node(70,Node(80))
     head = Node(50,Node(20,node))
     head.next.next = head.next
     
-    if isLoop(head):
-        print("Loop detected\n")
+    found = isLoop(head)
+    if found is not None:
+        print("Loop detected at %s" % (found.data))
     else: print("Not detected\n")
     
