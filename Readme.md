@@ -29,6 +29,7 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 * Delete middle node - *_Delete a node in middle of singly linked list_* **_&rarr;_** **_[C++](/Delete%20Middle%20node/delete_middle_node.cpp)_** **|** **_[Python](/Delete%20Middle%20node%20/delete_middle_node.py)_**
 * Partition - *_Partition singly linked list around x_* **_&rarr;_** **_[C++](/Partition/partition.cpp)_** **|** **_[Python](/Partition/partition.py)_**
 * Intersection - *_Given 2 SLL, check if they intersect_* **_&rarr;_** **_[C++](/Intersection/Intersection.cpp)_** **|** **_[Python](/Intersection/Intersection.py)_**
+* Loop Detection - *_Detect loop in Circular Linked List_* **_&rarr;_** **_[C++](/Loop%20Detection/loop_detection.cpp)_** **|** **_[Python](/Loop%20Detection/loop_detection.py)_**
 
 ## Todo's:
 - [ ] Readme per chapter explaining solutions  
