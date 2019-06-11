@@ -24,12 +24,12 @@ This repository contains C++ and Python solutions to the problems in the sixth e
   * **_[C++](/Chapter%201%20-%20Arrays%20and%20Strings/String%20Rotation/string_rotation.cpp)_** **|** **_[Python](/Chapter%201%20-%20Arrays%20and%20Strings/Zero%20Matrix/string_rotation.py)_**
 
 ### Chapter 2:
-* Remove Dups - *_Remove duplicates from unsorted linked list_* **_&rarr;_** **_[C++](/Remove%20Dups/remove_dups.cpp)_** **|** **_[Python](/Remove%20Dups/remove_dups.py)_**
-* Return Kth To Last - *_Find kth to last element of singly linked list_* **_&rarr;_** **_[C++](/Return%20Kth%20To%20Last/return_kth_to_last.cpp)_** **|** **_[Python](/Return%20Kth%20To%20Last/return_kth_to_last.py)_**
-* Delete middle node - *_Delete a node in middle of singly linked list_* **_&rarr;_** **_[C++](/Delete%20Middle%20node/delete_middle_node.cpp)_** **|** **_[Python](/Delete%20Middle%20node%20/delete_middle_node.py)_**
-* Partition - *_Partition singly linked list around x_* **_&rarr;_** **_[C++](/Partition/partition.cpp)_** **|** **_[Python](/Partition/partition.py)_**
-* Intersection - *_Given 2 SLL, check if they intersect_* **_&rarr;_** **_[C++](/Intersection/Intersection.cpp)_** **|** **_[Python](/Intersection/Intersection.py)_**
-* Loop Detection - *_Detect loop in Circular Linked List_* **_&rarr;_** **_[C++](/Loop%20Detection/loop_detection.cpp)_** **|** **_[Python](/Loop%20Detection/loop_detection.py)_**
+* Remove Dups - *_Remove duplicates from unsorted linked list_* **_&rarr;_** **_[C++](/Chapter%202%20-%20Linked%20Lists/Remove%20Dups/remove_dups.cpp)_** **|** **_[Python](/Chapter%202%20-%20Linked%20Lists/Remove%20Dups/remove_dups.py)_**
+* Return Kth To Last - *_Find kth to last element of singly linked list_* **_&rarr;_** **_[C++](/Chapter%202%20-%20Linked%20Lists/Return%20Kth%20To%20Last/return_kth_to_last.cpp)_** **|** **_[Python](/Chapter%202%20-%20Linked%20Lists/Return%20Kth%20To%20Last/return_kth_to_last.py)_**
+* Delete middle node - *_Delete a node in middle of singly linked list_* **_&rarr;_** **_[C++](/Chapter%202%20-%20Linked%20Lists/Delete%20Middle%20node/delete_middle_node.cpp)_** **|** **_[Python](/Chapter%202%20-%20Linked%20Lists/Delete%20Middle%20node%20/delete_middle_node.py)_**
+* Partition - *_Partition singly linked list around x_* **_&rarr;_** **_[C++](/Chapter%202%20-%20Linked%20Lists/Partition/partition.cpp)_** **|** **_[Python](/Chapter%202%20-%20Linked%20Lists/Partition/partition.py)_**
+* Intersection - *_Given 2 SLL, check if they intersect_* **_&rarr;_** **_[C++](/Chapter%202%20-%20Linked%20Lists/Intersection/Intersection.cpp)_** **|** **_[Python](/Chapter%202%20-%20Linked%20Lists/Intersection/Intersection.py)_**
+* Loop Detection - *_Detect loop in Circular Linked List_* **_&rarr;_** **_[C++](/Chapter%202%20-%20Linked%20Lists/Loop%20Detection/loop_detection.cpp)_** **|** **_[Python](/Chapter%202%20-%20Linked%20Lists/Loop%20Detection/loop_detection.py)_**
 
 ## Todo's:
 - [ ] Readme per chapter explaining solutions  
