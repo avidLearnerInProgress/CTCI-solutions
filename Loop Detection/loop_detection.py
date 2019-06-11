@@ -1,4 +1,4 @@
-#https://ide.geeksforgeeks.org/qBxCku5tML
+#https://ide.geeksforgeeks.org/UTnyDna7oa
 class Node:
     def __init__(self, data, next = None):
         self.data, self.next = data, next
@@ -51,4 +51,3 @@ if __name__ == "__main__":
     if found is not None:
         print("Loop detected at %s" % (found.data))
     else: print("Not detected\n")
-    
