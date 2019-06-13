@@ -1,4 +1,4 @@
-#https://ide.geeksforgeeks.org/UTnyDna7oa
+#https://ide.geeksforgeeks.org/v63gM4frIH
 class Node:
     def __init__(self, data, next = None):
         self.data, self.next = data, next
