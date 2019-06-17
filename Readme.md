@@ -32,7 +32,7 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 * Loop Detection - *_Detect loop in Circular Linked List_* **_&rarr;_** **_[C++](/Chapter%202%20-%20Linked%20Lists/Loop%20Detection/loop_detection.cpp)_** **|** **_[Python](/Chapter%202%20-%20Linked%20Lists/Loop%20Detection/loop_detection.py)_**
 
 ### Chapter 3:  
-* Three In One - *_Implement k(3) stacks using single array_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20And%20Queues/Three%20In%20One/three_in_one.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20And%20Queues/Three%20In%20One/three_in_one.py)_**
+* Three In One - *_Implement k(3) stacks using single array_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20And%20Queues/Three%20in%20One/three_in_one.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20And%20Queues/Three%20in%20One/three_in_one.py)_**
 
 ## Todo's:
 - [ ] Readme per chapter explaining solutions  
