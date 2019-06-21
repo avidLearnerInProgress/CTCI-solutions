@@ -35,6 +35,7 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 ### Chapter 3:  
 * Three In One - *_Implement k(3) stacks using single array_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20and%20Queues/Three%20in%20One/three_in_one.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20and%20Queues/Three%20in%20One/three_in_one.py)_**
 * Stack Min - *_Design min stack that performs push, pop and min in O(1)_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20and%20Queues/Stacks%20Min/stack_min.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20and%20Queues/Stack%20Min/stack_min.py)_**
+* Stack Of Plates - *_Implement set of stacks with popAt operation_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20and%20Queues/Stack%20Of%20Plates/stack_of_plates.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20and%20Queues/Stack%20Of%20Plates/stack_of_plates.py)_**
 
 ## Todo's:
 - [ ] Readme per chapter explaining solutions  
