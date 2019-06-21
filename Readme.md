@@ -30,9 +30,10 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 * Partition - *_Partition singly linked list around x_* **_&rarr;_** **_[C++](/Chapter%202%20-%20Linked%20Lists/Partition/partition.cpp)_** **|** **_[Python](/Chapter%202%20-%20Linked%20Lists/Partition/partition.py)_**
 * Intersection - *_Given 2 SLL, check if they intersect_* **_&rarr;_** **_[C++](/Chapter%202%20-%20Linked%20Lists/Intersection/Intersection.cpp)_** **|** **_[Python](/Chapter%202%20-%20Linked%20Lists/Intersection/Intersection.py)_**
 * Loop Detection - *_Detect loop in Circular Linked List_* **_&rarr;_** **_[C++](/Chapter%202%20-%20Linked%20Lists/Loop%20Detection/loop_detection.cpp)_** **|** **_[Python](/Chapter%202%20-%20Linked%20Lists/Loop%20Detection/loop_detection.py)_**
-
+* Sum Lists - *_Add 2 numbers represented by Linked Lists_* **_&rarr;_** **_[C++](/Chapter%202%20-%20Linked%20Lists/Sum%20Lists/sum_lists_forward1.cpp)_** **|** **_[Python](/Chapter%202%20-%20Linked%20Lists/Sum%20Lists/sum_lists_backward.py)_**
+  
 ### Chapter 3:  
-* Three In One - *_Implement k(3) stacks using single array_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20And%20Queues/Three%20in%20One/three_in_one.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20And%20Queues/Three%20in%20One/three_in_one.py)_**
+* Three In One - *_Implement k(3) stacks using single array_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20and%20Queues/Three%20in%20One/three_in_one.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20and%20Queues/Three%20in%20One/three_in_one.py)_**
 
 ## Todo's:
 - [ ] Readme per chapter explaining solutions  
