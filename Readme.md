@@ -37,6 +37,7 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 * Stack Min - *_Design min stack that performs push, pop and min in O(1)_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20and%20Queues/Stacks%20Min/stack_min.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20and%20Queues/Stack%20Min/stack_min.py)_**
 * Stack Of Plates - *_Implement set of stacks with popAt operation_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20and%20Queues/Stack%20Of%20Plates/stack_of_plates.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20and%20Queues/Stack%20Of%20Plates/stack_of_plates.py)_**
 * Queue Via Stacks - *_Implement queue data structure with 2 stacks_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20and%20Queues/Queue%20Via%20Stacks/queue_via_stacks.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20and%20Queues/Queue%20Via%20Stacks/queue_via_stacks.py)_**
+* Sort Stacks - *_Sort stack in ascending order using a temporary stack_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20and%20Queues/Sort%20Stack/sort_stack.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20and%20Queues/Sort%20Stack/sort_stack.py)_**
 
 ## Todo's:
 - [ ] Readme per chapter explaining solutions  
