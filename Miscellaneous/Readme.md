@@ -9,4 +9,6 @@
 * Height of Binary Tree (Non-recursive)
 * Delete Node in Binary Tree + (--Find deepest node in Binary Tree--)
 * Count number of leaf nodes + (--Full Nodes--) + (--Half Nodes--)
-* Check if two Binary trees are identical
+* Check if two Binary Trees are identical
+* Diameter of Binary Tree
+* Find level having maximum sum in Binary Tree
