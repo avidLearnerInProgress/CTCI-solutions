@@ -1,4 +1,3 @@
-//https://ide.geeksforgeeks.org/zoqtHL4vFa
 #include<bits/stdc++.h>
 using namespace std;
 struct Node{
@@ -96,8 +95,6 @@ int main(){
     root->left->right = newNode(5);
     root->right->left = newNode(6);
     root->right->right = newNode(7);
-    //if(insertInTree(root, 10) != NULL)
-       // cout<<insertInTree(root, 10)->data;
-    insertInTreeRec(root, 12);
-    inOrder(root);
+    Node *temp = deleteNode(root, 4);
+    inOrder(temp);
 }
