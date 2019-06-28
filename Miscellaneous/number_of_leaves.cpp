@@ -40,6 +40,9 @@ int numberOfLeaves(Node *root){
     return count;
 }
 
+//For finding full nodes --> Total - leaf
+//For half nodes --> XOR left and right subtree
+
 int main(){
     Node *root = newNode(1);
     root->left = newNode(2);
