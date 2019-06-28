@@ -7,4 +7,5 @@
 * Count Nodes in Binary Tree
 * Reverse Level Order Traversal of Binary Tree
 * Height of Binary Tree (Non-recursive)
-* Delete Node in Binary Tree
+* Delete Node in Binary Tree + (--Find deepest node in Binary Tree--)
+* Count number of leaf nodes + (--Full Nodes--) + (--Half Nodes--)
