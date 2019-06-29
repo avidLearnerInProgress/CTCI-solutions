@@ -24,8 +24,7 @@ bool pathWithGivenSumRec(Node *root, int sum){
     else if(root->left)
     return pathWithGivenSumRec(root->left, rsum) ;
     else
-    return pathWithGivenSumRec(root->right, rsum);        
-    
+    return pathWithGivenSumRec(root->right, rsum);
 }
 
 //non-recursive
