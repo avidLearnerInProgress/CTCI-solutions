@@ -1,4 +1,4 @@
-//https://ide.geeksforgeeks.org/PhWfDTcPYG
+//https://ide.geeksforgeeks.org/KXWdLMTV8d
 #include<bits/stdc++.h>
 using namespace std;
 struct Node{
@@ -36,6 +36,32 @@ int LCA(Node *root, int n1, int n2)
     return path1[i-1]->data;
 }
 
+Node *findLCAUtil(Node *root,int n1,int n2,bool &v1,bool &v2){
+	if(root == NULL)return NULL;
+	if(root->data == n1){
+		v1 = true;
+		return root;
+	}
+	if(root->data == n2){
+		v2 = true;
+		return root;
+	}
+	Node *lca = findLCAUtil(root->left,n1,n2,v1,v2);
+	Node *rca = findLCAUtil(root->right,n1,n2,v1,v2);
+	if(lca && rca)return root;
+	return(lca!=NULL)?lca:rca;
+}
+
+Node* LCAv2(Node *root, int n1, int n2){
+    if(root == NULL) return NULL;
+    bool v1, v2;
+    Node* res = findLCAUtil(root, n1, n2, v1, v2);
+    if(v1 && v2)
+        return res;
+    else
+        return NULL;
+}
+
 
 int main(){
     Node *root = newNode(1);
@@ -46,4 +72,5 @@ int main(){
     root->right->left = newNode(6);
     root->right->right = newNode(7);
     cout<<LCA(root, 3, 6)<<"\n";
+    cout<<LCAv2(root, 2, 3)->data<<"\n";
 }
