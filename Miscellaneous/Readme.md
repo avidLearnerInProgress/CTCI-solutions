@@ -15,3 +15,4 @@
 * Find all root to leaf paths in Binary Tree
 * Find if path with given sum exists in Binary Tree
 * Convert Binary tree to its mirror + (--Check mirror--)
+* Find least common ancestor in Binary Tree
