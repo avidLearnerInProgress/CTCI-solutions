@@ -1,4 +1,4 @@
-//
+//https://ide.geeksforgeeks.org/S4RimM71BC
 #include<bits/stdc++.h>
 using namespace std;
 struct Node{
@@ -31,14 +31,25 @@ void inOrder(Node *root){
     inOrder(root->right);
 }
 
+bool checkMirror(Node *r1, Node *r2){
+    if(!r1 && !r2) return true;
+    if(!r1 || !r2) return false;
+    //if(r1->data != r2->data) return false;
+    else return r1->data == r2->data && checkMirror(r1->left, r2->right) && checkMirror(r1->right, r2->left);
+}
+
 int main(){
-    Node *root = newNode(1);
-    root->left = newNode(2);
-    root->right = newNode(3);
-    root->left->left = newNode(4);
-    root->left->right = newNode(5);
-    root->right->left = newNode(6);
-    root->right->right = newNode(7);
-    Node *tp = convertMirror(root);
+    Node *a = newNode(1); 
+    Node *b = newNode(1); 
+    a->left = newNode(2); 
+    a->right = newNode(3); 
+    a->left->left  = newNode(4); 
+    a->left->right = newNode(5); 
+    b->left = newNode(3); 
+    b->right = newNode(2); 
+    b->right->left = newNode(5); 
+    b->right->right = newNode(4); 
+    cout<<checkMirror(a, b)<<"\n";
+    Node *tp = convertMirror(a);
     inOrder(tp);
 }
