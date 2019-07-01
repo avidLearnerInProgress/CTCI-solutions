@@ -16,4 +16,5 @@
 * Find if path with given sum exists in Binary Tree
 * Convert Binary tree to its mirror + (--Check mirror--)
 * Find least common ancestor in Binary Tree
-* Build tree from Inorder and pre-order traversals
+* Build tree from InOrder and PreOrder traversals
+* Build tree from InOrder and PostOrder traversals
