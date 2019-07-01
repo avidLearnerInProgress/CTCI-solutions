@@ -18,3 +18,4 @@
 * Find least common ancestor in Binary Tree
 * Build tree from InOrder and PreOrder traversals
 * Build tree from InOrder and PostOrder traversals
+* Build tree from InOrder and LevelOrder traversals
