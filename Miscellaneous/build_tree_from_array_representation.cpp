@@ -1,4 +1,4 @@
-//https://ide.geeksforgeeks.org/wzItSDJ5Gd
+//
 #include<bits/stdc++.h>
 using namespace std;
 struct Node{
@@ -21,7 +21,6 @@ void inorder(Node *root){
 }
 
 Node *constructTree(int parent[], int n){
-    
     map<int, Node*> mp;
     Node *temp, *root;
 
