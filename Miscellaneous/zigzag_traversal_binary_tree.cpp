@@ -1,4 +1,4 @@
-//
+//https://ide.geeksforgeeks.org/o9WfoOwWrP
 #include<bits/stdc++.h>
 using namespace std;
 struct Node{
@@ -32,13 +32,52 @@ void traverse_zigzag(Node *root){
                 nLevel.push(top->left);
             }
         }
-        if(!cLevel.empty()){
+        if(cLevel.empty()){
             lToR = !lToR;
             swap(cLevel, nLevel);
         }
     }
 }
 
+int height(Node *root){
+    if(root == NULL) return 0;
+    return 1 + max(height(root->left), height(root->right));
+}
+
+void printLToR(Node *root, int level){
+    if(root == NULL) return;
+    if(level == 1) cout<<root->data<<" ";
+    else if(level > 1){
+        printLToR(root->left, level-1);
+        printLToR(root->right, level-1);
+    }
+}
+
+void printRToL(Node *root, int level){
+    if(root == NULL) return;
+    if(level == 1) cout<<root->data<<" ";
+    else if(level > 1){
+        printRToL(root->right, level-1);
+        printRToL(root->left, level-1);
+    }
+}
+
+void traverse_zigzag_rec(Node *root){
+    if(root == NULL) return;
+    int h = height(root);
+    bool flag = false;
+
+    for(int i=1; i<=h; i++){
+        if(!flag){
+            printLToR(root, i);
+            flag = true;
+        }
+        else{
+            printRToL(root, i);
+            flag = false;
+        }
+    }
+}
 
 int main(){
     Node *root = newNode(1);
@@ -49,4 +88,6 @@ int main(){
     root->right->left = newNode(6);
     root->right->right = newNode(7);
     traverse_zigzag(root);
+    cout<<"\n";
+    traverse_zigzag_rec(root);
 }
