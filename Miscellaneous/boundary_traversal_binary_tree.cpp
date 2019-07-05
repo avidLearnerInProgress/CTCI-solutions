@@ -1,4 +1,4 @@
-//
+//https://ide.geeksforgeeks.org/VznqOhAuDS
 #include<bits/stdc++.h>
 using namespace std;
 struct Node{
@@ -66,6 +66,50 @@ void boundary_traversal(Node *root){
 
 }
 
+void boundary_traversal_rec(Node *root){
+    if(!root) return;
+    else{
+        if(!root->left && !root->right){
+            cout<<root->data<<"\n";
+            return;
+        }
+        
+        vector<Node *> lside, rside;
+        lside.push_back(root);
+        
+        Node *Le = root->left;
+        while(Le->left){
+            lside.push_back(Le);
+            Le = Le->left;
+        }
+
+        queue<Node *> leaves;
+        leaves.push(root);
+
+        while(!leaves.empty()){
+            Node *fron = leaves.front();
+            leaves.pop();
+            if(!fron->left && !fron->right)
+                lside.push_back(fron);
+            if(fron->left)
+                leaves.push(fron->left);
+            if(fron->right)
+                leaves.push(fron->right);
+        }
+
+        Node *Re = root->right;
+        while(Re->right){
+            rside.push_back(Re);
+            Re = Re->right;
+        }
+        reverse(rside.begin(), rside.end());
+        lside.insert(lside.end(), rside.begin(), rside.end());
+        for(auto ele : lside)
+            cout<<ele->data<<" ";
+    }
+    return;   
+}
+
 int main(){
     Node *root = newNode(1);
     root->left = newNode(2);
@@ -76,4 +120,5 @@ int main(){
     root->right->right = newNode(7);
     boundary_traversal(root);
     cout<<"\n";
+    boundary_traversal_rec(root);
 }
