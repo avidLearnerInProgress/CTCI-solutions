@@ -1,4 +1,4 @@
-//https://ide.geeksforgeeks.org/93DV2q7j9Z
+//https://ide.geeksforgeeks.org/Zx0sdr4yRF
 #include<bits/stdc++.h>
 using namespace std;
 struct Node{
@@ -41,7 +41,7 @@ void reverse_traverse_zigzag_rec(Node *root){
     int h = height(root);
     bool flag = true;
 
-    for(int i=1; i<=h; i++){
+    for(int i=h; i>=1; i--){
         if(!flag){
             printLToR(root, i);
             flag = true;
