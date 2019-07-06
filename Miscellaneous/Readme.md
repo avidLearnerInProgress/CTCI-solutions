@@ -22,4 +22,5 @@
 * Find Ancestors of Node in Binary Tree
 * Construct Binary Tree from array representation
 * Zigzag Traversal Of Binary Tree
+* Reverse Zigzag Traversal Of Binary Tree
 * Boundary Traversal of Binary Tree
