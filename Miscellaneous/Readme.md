@@ -24,3 +24,4 @@
 * Zigzag Traversal Of Binary Tree
 * Reverse Zigzag Traversal Of Binary Tree
 * Boundary Traversal of Binary Tree
+* Vertical Sum of Binary Tree
