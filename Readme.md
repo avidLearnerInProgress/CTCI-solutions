@@ -40,6 +40,9 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 * Sort Stacks - *_Sort stack in ascending order using a temporary stack_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20and%20Queues/Sort%20Stack/sort_stack.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20and%20Queues/Sort%20Stack/sort_stack.py)_**
 * Animal Shelter - *_Design system to allocate animals on FIFO basis from animal shelter_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20and%20Queues/Animal%20Shelter/animal_shelter.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20and%20Queues/Animal%20Shelter/animal_shelter.py)_**
 
+### Chapter 4:  
+* List Of Depths - *_Create LinkedList of Nodes at each depth of binary tree_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/List%20Of%20Depths/list_of_depths.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/List%20Of%20Depths/list_of_depths.py)_**
+
 ## Miscellaneous:
 
 * [Problems](/Miscellaneous/Readme.md) - *_List of relevant problems implemented outside of CTCI_*
