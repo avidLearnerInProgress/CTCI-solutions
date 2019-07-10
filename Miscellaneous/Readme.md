@@ -25,3 +25,4 @@
 * Reverse Zigzag Traversal Of Binary Tree
 * Boundary Traversal of Binary Tree
 * Vertical Sum of Binary Tree
+* Sum of root to leaf paths of binary numbers in binary tree
