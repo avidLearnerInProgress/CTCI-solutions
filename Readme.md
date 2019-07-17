@@ -43,6 +43,9 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 ### Chapter 4:  
 * List Of Depths - *_Create LinkedList of Nodes at each depth of binary tree_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/List%20Of%20Depths/list_of_depths.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/List%20Of%20Depths/list_of_depths.py)_**
 
+* Check Balanced - *_Check if Binary Tree is balanced_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/Check%20Balanced/check_balanced.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/Check%20Balanced/check_balanced.py)_**
+
+
 ### Miscellaneous:
 
 * [Problems](/Miscellaneous/Readme.md) - *_List of relevant problems implemented outside of CTCI_*
