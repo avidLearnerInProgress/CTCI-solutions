@@ -41,6 +41,8 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 * Animal Shelter - *_Design system to allocate animals on FIFO basis from animal shelter_* **_&rarr;_** **_[C++](/Chapter%203%20-%20Stacks%20and%20Queues/Animal%20Shelter/animal_shelter.cpp)_** **|** **_[Python](/Chapter%203%20-%20Stacks%20and%20Queues/Animal%20Shelter/animal_shelter.py)_**
 
 ### Chapter 4:  
+* Route Between Nodes - *_Check if path exists between two nodes of directed graph_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/Route%20Between%20Nodes/route_between_nodes.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/Route%20Between%20Nodes/route_between_nodes.py)_**
+
 * List Of Depths - *_Create LinkedList of Nodes at each depth of binary tree_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/List%20Of%20Depths/list_of_depths.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/List%20Of%20Depths/list_of_depths.py)_**
 * Check Balanced - *_Check if Binary Tree is balanced_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/Check%20Balanced/check_balanced.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/Check%20Balanced/check_balanced.py)_**
 
