@@ -1,3 +1,4 @@
+//https://ide.geeksforgeeks.org/U6izoNIwXd
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -31,6 +32,33 @@ class Graph{
                 DFSUtil(i, visited);
         }
     }
+
+    void DFSIterativeUtil(int v, vector<bool>& visited){
+        stack<int> st;
+        st.push(v);   
+        while(!st.empty()){
+            v = st.top();
+            st.pop();
+            if(!visited[v]){
+                cout<<v<<" ";
+                visited[v] = true;
+            }
+
+            for(auto it = adj[v].rbegin(); it != adj[v].rend(); it++){
+                if(!visited[*it])
+                    st.push(*it);
+            }
+        } 
+    }
+
+    void DFSIterative(){
+        vector<bool> visited(V, false);
+        cout<<"DFS iterative traversal:-\n";
+        for(int i=0; i<V; i++){
+            if(!visited[i])
+                DFSIterativeUtil(i, visited);
+        }
+    }
 };
 
 
@@ -43,4 +71,6 @@ int main(){
     g.addEdge(2, 3);
     g.addEdge(3, 3);
     g.DFS();
+    cout<<"\n";
+    g.DFSIterative();
 }
