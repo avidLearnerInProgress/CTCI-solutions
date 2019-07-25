@@ -26,3 +26,7 @@
 * Boundary Traversal of Binary Tree
 * Vertical Sum of Binary Tree
 * Sum of root to leaf paths of binary numbers in binary tree
+* Graph Traversal - DFS
+* Graph Traversal - BFS
+* Topological Sort
+* Find number of strongly connected components - Kosaraju's Algorithm
