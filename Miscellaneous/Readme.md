@@ -30,3 +30,4 @@
 * Graph Traversal - BFS
 * Topological Sort
 * Find number of strongly connected components - Kosaraju's Algorithm
+* Suffix Tree
