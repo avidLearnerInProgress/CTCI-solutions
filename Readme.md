@@ -45,6 +45,8 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 * Route Between Nodes - *_Check if path exists between two nodes of directed graph_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/Route%20Between%20Nodes/route_between_nodes.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/Route%20Between%20Nodes/route_between_nodes.py)_**
 * List Of Depths - *_Create LinkedList of Nodes at each depth of binary tree_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/List%20Of%20Depths/list_of_depths.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/List%20Of%20Depths/list_of_depths.py)_**
 * Check Balanced - *_Check if Binary Tree is balanced_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/Check%20Balanced/check_balanced.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/Check%20Balanced/check_balanced.py)_**
+* Minimal Tree - *_Construct Binary Search Tree from Sorted Array_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/Minimal%20Tree/minimal_tree.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/Check%20Balanced/minimal_tree.py)_**
+
 
 ### Miscellaneous:
 
