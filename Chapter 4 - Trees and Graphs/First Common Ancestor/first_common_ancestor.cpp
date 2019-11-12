@@ -1,6 +1,6 @@
+//https://ide.geeksforgeeks.org/KXWdLMTV8d
 #include<bits/stdc++.h>
 using namespace std;
-
 struct Node{
     int data;
     Node *left, *right;
@@ -13,52 +13,49 @@ Node *newNode(int data){
     return curr;
 }
 
-Node *findLCA(Node *root, int p, int q, bool visited1, bool visited2){
-    if(!root) return NULL;
-    //visited booleans are needed to ensure that if p is present and q is not; then p is not returned as the LCA.
-    //devoid of visited, the above scenario takes place.
-
-    if(root->data == p){
-        visited1 = true;
-        return root;
-    }
-    if(root->data == q){
-        visited2 = true;
-        return root;
-    }
-    Node *lLCA = findLCA(root->left, p, q, visited1, visited2);
-    Node *rLCA = findLCA(root->right, p, q, visited1, visited2);
-
-    if(visited1 && visited2) return root;
-    return lLCA ? lLCA : rLCA;
+Node *findLCAUtil(Node *root,int n1,int n2,bool &v1,bool &v2){
+	if(root == NULL)return NULL;
+	if(root->data == n1){
+		v1 = true;
+		return root;
+	}
+	if(root->data == n2){
+		v2 = true;
+		return root;
+	}
+	Node *lca = findLCAUtil(root->left,n1,n2,v1,v2);
+	Node *rca = findLCAUtil(root->right,n1,n2,v1,v2);
+	if(lca && rca)return root;
+	return(lca!=NULL)?lca:rca;
 }
 
 bool find(Node *root, int k){
-    if(!root) return false;
-    if(root->data == k)return true;
-    if(find(root->left, k) || find(root->right, k)) return true; //check for the left and right subtree
+    if(root == NULL) return NULL;
+    if(root->data == k) return root;
+    
+    if(find(root->left, k) || find(root->right, k)) return true;
     return false;
+    
 }
 
-Node* LCA(Node *root, int p, int q){
-    if(!root) return NULL;
-    bool v1 = false, v2 = false;
-    Node *lca = findLCA(root, p, q, v1, v2);
-    //if v1 and v2 are returned true; it means that nodes with data p and q are in different subtrees
-    if(v1 && v2 || v1 && find(lca, n2) || v2 && find(lca, n1)) // conditions with || are needed if q is just below p in the same sub-tree
-        return lca;
-    else return NULL;
+Node* LCAv2(Node *root, int n1, int n2){
+    if(root == NULL) return NULL;
+    bool v1, v2;
+    Node* res = findLCAUtil(root, n1, n2, v1, v2);
+    if(v1 && v2 || v1 && find(res, v2) || v2 && find(res, v1))
+        return res;
+    else
+        return NULL;
 }
+
 
 int main(){
-    Node *root = newNode(20);
-    root->left = newNode(10);
-    root->right = newNode(30);
-    root->left->left = newNode(5);
-    root->left->right = newNode(15);
-    root->left->left->left = newNode(45);
-    root->left->left->right = newNode(4);
-    Node *p = root->left->left->left;
-    Node *q = root->left->left->left;
-    cout<<LCA(root, p->data, q->data)->data<<"\n";
+    Node *root = newNode(1);
+    root->left = newNode(2);
+    root->right = newNode(3);
+    root->left->left = newNode(4);
+    root->left->right = newNode(5);
+    root->right->left = newNode(6);
+    root->right->right = newNode(7);
+    cout<<LCAv2(root, 4, 5)->data<<"\n";
 }
