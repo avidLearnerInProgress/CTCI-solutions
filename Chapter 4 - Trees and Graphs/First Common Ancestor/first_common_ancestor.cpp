@@ -58,4 +58,3 @@ int main(){
     root->right->left = newNode(6);
     root->right->right = newNode(7);
     cout<<LCAv2(root, 4, 5)->data<<"\n";
-}
