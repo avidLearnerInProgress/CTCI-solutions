@@ -37,7 +37,6 @@ bool find(Node *root, int k){
     return false;
     
 }
-
 Node* LCA(Node *root, int n1, int n2){
     if(root == NULL) return NULL;
     bool v1, v2;
