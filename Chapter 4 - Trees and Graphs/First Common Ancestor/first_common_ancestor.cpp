@@ -38,7 +38,7 @@ bool find(Node *root, int k){
     
 }
 
-Node* LCAv2(Node *root, int n1, int n2){
+Node* LCA(Node *root, int n1, int n2){
     if(root == NULL) return NULL;
     bool v1, v2;
     Node* res = findLCAUtil(root, n1, n2, v1, v2);
@@ -48,7 +48,6 @@ Node* LCAv2(Node *root, int n1, int n2){
         return NULL;
 }
 
-
 int main(){
     Node *root = newNode(1);
     root->left = newNode(2);
@@ -57,4 +56,4 @@ int main(){
     root->left->right = newNode(5);
     root->right->left = newNode(6);
     root->right->right = newNode(7);
-    cout<<LCAv2(root, 4, 5)->data<<"\n";
+    cout<<LCA(root, 4, 5)->data<<"\n";
