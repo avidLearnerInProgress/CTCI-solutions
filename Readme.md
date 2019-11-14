@@ -47,6 +47,7 @@ This repository contains C++ and Python solutions to the problems in the sixth e
 * Check Balanced - *_Check if Binary Tree is balanced_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/Check%20Balanced/check_balanced.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/Check%20Balanced/check_balanced.py)_**
 * Minimal Tree - *_Construct Binary Search Tree from Sorted Array_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/Minimal%20Tree/minimal_tree.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/Minimal%20Tree/minimal_tree.py)_**
 * Validate BST - *_Check if Binary Tree is Binary Search Tree_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/Validate%20BST/validate_bst.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/Validate%20BST/validate_bst.py)_**
+* First Common Ancestor - *_Find first common ancestor for 2 nodes in Binary Tree_* **_&rarr;_** **_[C++](/Chapter%204%20-%20Trees%20and%20Graphs/First%20Common%20Ancestor/first_common_ancestor.cpp)_** **|** **_[Python](/Chapter%204%20-%20Trees%20and%20Graphs/First%20Common%20Ancestor/first_common_ancestor.py)_**
 
 
 ### Miscellaneous:
